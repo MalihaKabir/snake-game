@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearInterval(interval);
 		score = 0;
 		scoreToDisplay.innerHTML = score;
-		// generateAppleRandomly()
+		generateAppleRandomly();
 		direction = 1;
 		intervalTime = 1000;
 		currentIndex = 0;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// squares[currentSnake[0]].classList.add('snake');
 			squares[tail].classList.add('snake'); // to grow the snake longer
 			currentSnake.push(tail);
-			// generateAppleRandomly();
+			generateAppleRandomly();
 			score++;
 			scoreToDisplay.textContent = score;
 			clearInterval(interval);
@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		// re-add the className of 'snake' at the end of moveOutcomes function
 		squares[currentSnake[0]].classList.add('snake');
+	}
+
+	// generate new apple (once apple is eaten)
+	function generateAppleRandomly () {
+		do {
+			appleIndex = Math.floor(Math.random() * squares.length);
+		} while (squares[appleIndex].classList.contains('snake')) {
+			squares[appleIndex].classList.add('apple');
+		}
 	}
 
 	// create a function to assign keyCodes to make the snake move across the board using keycode
