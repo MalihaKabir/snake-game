@@ -69,9 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	function generateAppleRandomly () {
 		do {
 			appleIndex = Math.floor(Math.random() * squares.length);
-		} while (squares[appleIndex].classList.contains('snake')) {
-			squares[appleIndex].classList.add('apple');
-		}
+		} while (squares[appleIndex].classList.contains('snake'));
+		squares[appleIndex].classList.add('apple');
 	}
 
 	// create a function to assign keyCodes to make the snake move across the board using keycode
