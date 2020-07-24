@@ -69,8 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function generateAppleRandomly () {
 		do {
 			appleIndex = Math.floor(Math.random() * squares.length);
-		} while (squares[appleIndex].classList.contains('snake'));
-		{
+		} while (squares[appleIndex].classList.contains('snake')) {
 			squares[appleIndex].classList.add('apple');
 		}
 	}
