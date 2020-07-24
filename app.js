@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	let intervalTime = 0;
 	let interval = 0;
 
-	// Start or Restart the game
+	// Start or Restart the game, basically resetting the game
 	function startGame () {
 		currentSnake.forEach((item) => squares[item].classList.remove('snake'));
 		squares[appleIndex].classList.remove('apple');
 		clearInterval(interval);
 		score = 0;
-		scoreToDisplay.innerHTML = score;
+		scoreToDisplay.textContent = score;
 		generateAppleRandomly();
 		direction = 1;
 		intervalTime = 1000;
@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	function generateAppleRandomly () {
 		do {
 			appleIndex = Math.floor(Math.random() * squares.length);
-		} while (squares[appleIndex].classList.contains('snake')) {
+		} while (squares[appleIndex].classList.contains('snake'));
+		{
 			squares[appleIndex].classList.add('apple');
 		}
 	}
