@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearInterval(interval);
 		score = 0;
 		scoreToDisplay.innerHTML = score;
-		// generateRandomApple()
+		// generateAppleRandomly()
 		direction = 1;
 		intervalTime = 1000;
 		currentIndex = 0;
@@ -30,6 +30,40 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// a funtion that deals with All outcomes
+	function moveOutcomes () {
+		// deals with snake hitting border and snake hitting itself. "currentSnake[0]" is the head position
+		if (
+			(currentSnake[0] + widthOfWholeSquare >= widthOfWholeSquare * widthOfWholeSquare &&
+				direction === widthOfWholeSquare) || // if snake hits bottom
+			(currentSnake[0] % widthOfWholeSquare === widthOfWholeSquare - 1 && direction === 1) || // if snake hits right wall
+			(currentSnake[0] % widthOfWholeSquare === 0 && direction === -1) || // if snake hits left wall
+			(currentSnake[0] - widthOfWholeSquare < 0 && direction === -widthOfWholeSquare) || // if snake hits the top
+			squares[currentSnake[0] + direction].classList.contains('snake') // if snake goes into itself
+		) {
+			alert('Game Over!');
+			return clearInterval(interval); // it'll clear the interval if any of the above happen
+		}
+
+		const tail = currentSnake.pop(); // removes last item from the array and shows it
+		squares[tail].classList.remove('snake'); // removes class of snake from Tail
+		currentSnake.unshift(currentSnake[0] + direction); // gives a direction to head of currentSnake array
+
+		// deals with snake getting apple, when the head of the currentSnake gets into a square that contains a className 'apple'
+		if (squares[currentSnake[0]].classList.contains('apple')) {
+			squares[currentSnake[0]].classList.remove('apple');
+			// squares[currentSnake[0]].classList.add('snake');
+			squares[tail].classList.add('snake'); // to grow the snake longer
+			currentSnake.push(tail);
+			// generateAppleRandomly();
+			score++;
+			scoreToDisplay.textContent = score;
+			clearInterval(interval);
+			intervalTime = intervalTime * speed;
+			interval = setInterval(moveOutcomes, intervalTime);
+		}
+		// re-add the className of 'snake' at the end of moveOutcomes function
+		squares[currentSnake[0]].classList.add('snake');
+	}
 
 	// create a function to assign keyCodes to make the snake move across the board using keycode
 	function control (event) {
@@ -40,10 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else if (event.keyCode === 40) {
 			direction = +widthOfWholeSquare; // for arrow DOWN key, the snake head will instantly appear 10 divs ahead from where you're now
 		} else if (event.keyCode === 37) {
-			direction -= 1; // for LEFT, the snake will go one div left
+			direction = -1; // for LEFT, the snake will go one div left
 		} else if (event.keyCode === 38) {
 			direction = -widthOfWholeSquare; // for UP, the snake will go 10 divs back, to appear up
 		}
 	}
 	document.addEventListener('keydown', control);
+	startBtn.addEventListener('click', startGame);
 });
