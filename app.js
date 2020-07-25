@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	let direction = 1; // the Snake should always go 1 div ahead according to the given direction of keyboard by the player
 	let score = 0;
 	let speed = 0.9;
-	let intervalTime = 0;
-	let interval = 0;
+	let intervalTime = 0; // time duration of snake's normal movement
+	let interval = 0; // meanwhile time of snake after eating apple each time
 
 	// Start or Restart the game, basically resetting the game
 	function startGame () {
@@ -75,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// create a function to assign keyCodes to make the snake move across the board using keycode
 	function control (event) {
-		squares[currentIndex].classList.remove('snake'); // make sure to remove all class list of '.snake' between each move
-
 		if (event.keyCode === 39) {
 			direction = 1; // arrow RIGHT
 		} else if (event.keyCode === 40) {
