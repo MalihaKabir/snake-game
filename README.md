@@ -3,7 +3,7 @@ A vanilla JavaScript game, a fully functional game of Nokia 3310 Snake.
 
 ## Rules of the game
 * The Snake will start moving to eat the apple that appeared on the board
-* The Snake is controlled by the player with left, top, right, bottom keys of the keyboard
+* The Snake is controlled by the player with left, top, right, bottom arrow keys of the keyboard
 * Once the Snake eats an apple, it gets 1 point and gets bigger as well as starts moving faster to eat another apple to get more points
 * If the Snake hits any side(top, right, bottom, left) of the walls of the board, or it hits itself, the game will be over.
 
