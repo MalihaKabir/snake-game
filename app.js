@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		interval = setInterval(moveOutcomes, intervalTime);
 	}
 
-	function decideGameOver () {
+	// a funtion that deals with All outcomes
+	function moveOutcomes () {
 		// deals with snake hitting border and snake hitting itself. "currentSnake[0]" is the head position
 		if (
 			(currentSnake[0] + widthOfWholeSquare >= widthOfWholeSquare * widthOfWholeSquare &&
@@ -42,9 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('Game Over!');
 			return clearInterval(interval); // it'll clear the interval if any of the above happen
 		}
-	}
 
-	function gettingApple () {
+		const tail = currentSnake.pop(); // removes last item from the array and shows it
+		squares[tail].classList.remove('snake'); // removes class of snake from Tail
+		currentSnake.unshift(currentSnake[0] + direction); // gives a direction to head of currentSnake array
+
 		// deals with snake getting apple, when the head of the currentSnake gets into a square that contains a className 'apple'
 		if (squares[currentSnake[0]].classList.contains('apple')) {
 			squares[currentSnake[0]].classList.remove('apple'); // eating apple
@@ -57,17 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			intervalTime = intervalTime * speed;
 			interval = setInterval(moveOutcomes, intervalTime);
 		}
-	}
-
-	// a funtion that deals with All outcomes
-	function moveOutcomes () {
-		decideGameOver();
-
-		const tail = currentSnake.pop(); // removes last item from the array and shows it
-		squares[tail].classList.remove('snake'); // removes class of snake from Tail
-		currentSnake.unshift(currentSnake[0] + direction); // gives a direction to head of currentSnake array
-
-		gettingApple();
 
 		// re-add the className of 'snake' at the end of moveOutcomes function
 		squares[currentSnake[0]].classList.add('snake');
