@@ -12,7 +12,7 @@ body {
 
 h2 {
 	font-size: 2em;
-	color: rgb(6, 76, 141);
+	color: rgb(24, 49, 6);
 	font-weight: bolder;
 }
 
@@ -21,7 +21,8 @@ h2 {
 	font-size: 0.9em;
 	font-weight: bold;
 	margin-bottom: 20px;
-	background-color: rgba(17, 202, 187, 0.384);
+	background-color: rgba(243, 228, 15, 0.349);
+	/* background-color: rgba(17, 202, 187, 0.384); */
 	letter-spacing: .2em;
 	padding: 15px 0px;
 	width: 60%;
@@ -30,12 +31,12 @@ h2 {
 }
 
 .score-display {
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .score {
-	font-size: 1.2em;
-	color: rgb(6, 76, 141);
+	font-size: 1.7em;
+	color: rgb(24, 49, 6);
 	font-weight: bolder;
 }
 
@@ -46,7 +47,8 @@ h2 {
 	display: flex;
 	flex-wrap: wrap;
 	border-style: solid;
-	background-color: rgba(243, 228, 15, 0.13);
+	background: linear-gradient(to bottom, #ffffff, rgba(243, 228, 15, 0.13));
+	/* background-color: rgba(243, 228, 15, 0.13); */
 	border-radius: 10px;
 }
 
@@ -57,11 +59,14 @@ h2 {
 }
 
 .snake {
-	background-color: rgb(6, 76, 141);
+	background-color: rgb(24, 49, 6);
+	/* background-color: rgb(6, 76, 141); */
+	/* background: linear-gradient(to bottom, rgb(6, 76, 141), #4343435e); */
 }
 
 .apple {
-	background-color: rgb(238, 30, 75);
+	/* background-color: rgb(238, 30, 75); */
+	background: linear-gradient(to bottom, rgb(221, 109, 133), rgb(248, 18, 68));
 }
 
 .grid .apple {
