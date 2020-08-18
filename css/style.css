@@ -7,26 +7,53 @@ body {
 	margin-top: 1em;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+}
+
+h2 {
+	font-size: 2em;
+	color: rgb(6, 76, 141);
+	font-weight: bolder;
 }
 
 .start {
-	padding: 5px;
+	cursor: pointer;
+	font-size: 0.9em;
+	font-weight: bold;
 	margin-bottom: 20px;
-	background-color: rgb(17, 202, 187);
+	background-color: rgba(17, 202, 187, 0.384);
+	letter-spacing: .2em;
+	padding: 15px 0px;
+	width: 60%;
+	border: none;
+	border-radius: 90% 10% 10% 7% / 75% 10% 10% 26%;
+}
+
+.score-display {
+	font-size: 1.5em;
+}
+
+.score {
+	font-size: 1.2em;
+	color: rgb(6, 76, 141);
+	font-weight: bolder;
 }
 
 .grid {
-	width: 200px;
-	height: 200px;
+	margin-top: 1.5em;
+	width: 400px;
+	height: 400px;
 	display: flex;
 	flex-wrap: wrap;
 	border-style: solid;
 	background-color: rgba(243, 228, 15, 0.13);
+	border-radius: 10px;
 }
 
 .grid div {
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
 }
 
 .snake {
@@ -35,4 +62,8 @@ body {
 
 .apple {
 	background-color: rgb(238, 30, 75);
+}
+
+.grid .apple {
+	border-radius: 49% 51% 42% 53% / 44% 41% 58% 65%;
 }
