@@ -75,10 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function generateAppleIndex () {
 		smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
-		do {
-			appleIndex = Math.floor(Math.random() * smallGrids.length);
-		} while (currentSnake.forEach((item) => smallGrids[item].classList.contains('apple')));
-
+		appleIndex = Math.floor(Math.random() * smallGrids.length);
 		smallGrids[appleIndex].classList.add('apple');
 
 		if (smallGrids[appleIndex].classList.contains('snake')) {

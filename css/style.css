@@ -48,7 +48,6 @@ h2 {
 	flex-wrap: wrap;
 	border-style: solid;
 	background: linear-gradient(to bottom, #ffffff, rgba(243, 228, 15, 0.13));
-	/* background-color: rgba(243, 228, 15, 0.13); */
 	border-radius: 10px;
 }
 
@@ -60,12 +59,9 @@ h2 {
 
 .snake {
 	background-color: rgb(24, 49, 6);
-	/* background-color: rgb(6, 76, 141); */
-	/* background: linear-gradient(to bottom, rgb(6, 76, 141), #4343435e); */
 }
 
 .apple {
-	/* background-color: rgb(238, 30, 75); */
 	background: linear-gradient(to bottom, rgb(221, 109, 133), rgb(248, 18, 68));
 }
 
