@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		currentSnake = [ 2, 1, 0 ];
 		score = 0;
 		scoreToDisplay.textContent = score;
-		generateAppleIndex();
 		direction = 1;
 		intervalTime = 1000;
 		interval = setInterval(everyMoveOfSnake, intervalTime);
 		currentSnake.forEach((item) => smallGrids[item].classList.add('snake'));
+		generateAppleIndex();
 	}
 
 	function everyMoveOfSnake () {
@@ -74,13 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function generateAppleIndex () {
-		smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
+		smallGrids[appleIndex].classList.remove('apple');
+
 		appleIndex = Math.floor(Math.random() * smallGrids.length);
 
 		if (smallGrids[appleIndex].classList.contains('snake')) {
-			smallGrids[appleIndex].classList.remove('apple');
-			appleIndex = Math.floor(Math.random() * smallGrids.length);
-			smallGrids[appleIndex].classList.add('apple');
+			generateAppleIndex();
 		}
 		smallGrids[appleIndex].classList.add('apple');
 	}
