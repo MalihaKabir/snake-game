@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	function generateAppleIndex () {
 		smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
 		appleIndex = Math.floor(Math.random() * smallGrids.length);
-		smallGrids[appleIndex].classList.add('apple');
 
 		if (smallGrids[appleIndex].classList.contains('snake')) {
 			smallGrids[appleIndex].classList.remove('apple');
 			appleIndex = Math.floor(Math.random() * smallGrids.length);
 			smallGrids[appleIndex].classList.add('apple');
 		}
+		smallGrids[appleIndex].classList.add('apple');
 	}
 
 	document.addEventListener('keyup', giveDirection);
