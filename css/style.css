@@ -2,6 +2,7 @@ body {
 	display: flex;
 	justify-content: center;
 	background-color: rgba(94, 245, 6, 0.075);
+	font-family: Arial;
 }
 .center {
 	margin-top: 1em;
