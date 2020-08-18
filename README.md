@@ -10,4 +10,4 @@ A vanilla JavaScript game, a fully functional game of Nokia 3310 Snake.
 Go [here](https://keycode.info/) to get keyCodes.
 
 ### screen-shot:
-![screencapture-malihakabir-github-io-snake-game-2020-07-24-21_55_12](https://user-images.githubusercontent.com/43598622/88410815-b4601280-cdf8-11ea-90ec-5c33b021d702.jpg)
+![screencapture-127-0-0-1-5500-2020-08-18-18_13_56](https://user-images.githubusercontent.com/43598622/90512332-d5115300-e17f-11ea-8e34-c5392597e79b.jpg)
