@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function startFunction () {
 		currentSnake.forEach((item) => smallGrids[item].classList.remove('snake'));
+		smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
 		clearInterval(interval);
 		currentSnake = [ 2, 1, 0 ];
 		score = 0;
@@ -75,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function generateAppleIndex () {
-		// smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
 		smallGrids[appleIndex].classList.remove('apple');
 
 		appleIndex = Math.floor(Math.random() * smallGrids.length);
