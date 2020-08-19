@@ -24,13 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		generateAppleIndex();
 	}
 
+	// a funtion that deals with all outcomes of Snake
 	function everyMoveOfSnake () {
 		if (
-			(currentSnake[0] - width < 0 && direction === -width) ||
-			(currentSnake[0] % width === width - 1 && direction === 1) ||
-			(currentSnake[0] + width >= width * width && direction === width) ||
-			(currentSnake[0] % width === 0 && direction === -1) ||
-			smallGrids[currentSnake[0] + direction].classList.contains('snake')
+			(currentSnake[0] - width < 0 && direction === -width) || // if snake hits the top
+			(currentSnake[0] % width === width - 1 && direction === 1) || // if snake hits right wall
+			(currentSnake[0] + width >= width * width && direction === width) || // if snake hits bottom
+			(currentSnake[0] % width === 0 && direction === -1) || // if snake hits left wall
+			smallGrids[currentSnake[0] + direction].classList.contains('snake') // if snake goes into itself
 		) {
 			alert('Game Over!');
 			return clearInterval(interval);
