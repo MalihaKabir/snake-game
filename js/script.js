@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function generateAppleIndex () {
+		// smallGrids.forEach((smallGrid) => smallGrid.classList.remove('apple'));
 		smallGrids[appleIndex].classList.remove('apple');
 
 		appleIndex = Math.floor(Math.random() * smallGrids.length);
